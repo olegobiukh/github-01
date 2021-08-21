@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import Details from "./container/Details";
+import React, { useState, useEffect } from "react";
+
+import Main from "./container/Main";
+import "./index.scss";
 
 function App() {
+  const [name, setName] = useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1 className={`app__title`}>GitHub Searcher</h1>
+      <Main setName={setName} name={name} />
+      <Details setName={setName} name={name} />
     </div>
   );
 }
